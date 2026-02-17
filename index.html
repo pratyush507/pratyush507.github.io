@@ -1,238 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratyush Kumar Mohanty | Fluid Dynamics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
+<title>Pratyush Mohanty | Fluid Dynamics</title>
 
-        header {
-            background: #0b3c5d;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        nav {
-            background: #1d2731;
-            padding: 10px;
-            text-align: center;
-        }
+<style>
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* ========== GLOBAL ========== */
 
-        nav a:hover {
-            color: #66fcf1;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px;
-            background: white;
-        }
+body{
+    background:linear-gradient(135deg,#020024,#090979,#00d4ff);
+    color:white;
+    scroll-behavior:smooth;
+}
 
-        h2 {
-            color: #0b3c5d;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
+/* ========== HEADER ========== */
 
-        .section {
-            margin-bottom: 40px;
-        }
+header{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
 
-        ul {
-            line-height: 1.8;
-        }
+.hero{
+    background:rgba(255,255,255,0.08);
+    padding:60px;
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+}
 
-        footer {
-            background: #1d2731;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
+.hero h1{
+    font-size:3.5rem;
+    font-weight:700;
+}
 
-        .highlight {
-            color: #0b3c5d;
-            font-weight: bold;
-        }
+.hero span{
+    color:#00ffd5;
+}
 
-        .project-box {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            background: #fafafa;
-        }
-    </style>
+.hero p{
+    margin:20px 0;
+    font-size:1.2rem;
+}
+
+.hero a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#00ffd5;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero a:hover{
+    background:white;
+}
+
+/* ========== NAV ========== */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    margin:0 20px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#00ffd5;
+}
+
+/* ========== SECTIONS ========== */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    color:#00ffd5;
+}
+
+/* ========== CARDS ========== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ========== PUBLICATIONS ========== */
+
+.pub{
+    margin-bottom:20px;
+}
+
+/* ========== FOOTER ========== */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,0.6);
+    margin-top:50px;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media(max-width:700px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav a{
+    margin:0 10px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Pratyush Kumar Mohanty</h1>
-    <p>PhD Student | Fluid Mechanics | Viscoelastic Flows</p>
-    <p>Stability Analysis • DNS • Theoretical Fluid Dynamics</p>
-</header>
-
+<!-- NAV -->
 <nav>
     <a href="#about">About</a>
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#projects">Projects</a>
-    <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
+<!-- HERO -->
+<header>
+<div class="hero">
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a PhD student working in <span class="highlight">fluid dynamics</span>,
-            with a focus on viscoelastic instabilities, wall-bounded flows,
-            and stability theory.
-        </p>
+    <h1>Pratyush <span>Mohanty</span></h1>
 
-        <p>
-            My research combines analytical modeling, numerical simulations,
-            and computational tools such as MATLAB, Mathematica, and OpenFOAM.
-        </p>
-    </section>
+    <p>PhD Student • Fluid Mechanics • Viscoelastic Flows</p>
 
-    <!-- RESEARCH -->
-    <section id="research" class="section">
-        <h2>Research Interests</h2>
+    <p>Stability • DNS • Theoretical Modelling</p>
 
-        <ul>
-            <li>Viscoelastic flow instabilities</li>
-            <li>Linear & nonlinear stability analysis</li>
-            <li>Orr–Sommerfeld systems</li>
-            <li>Direct Numerical Simulation (DNS)</li>
-            <li>Microfluidics and wall-bounded flows</li>
-            <li>Complex fluids</li>
-        </ul>
-    </section>
+    <a href="#about">Explore My Work</a>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
-        <h2>Publications</h2>
+</div>
+</header>
 
-        <ul>
-            <li>
-                Mohanty, P. K., et al. (2023).
-                <i>Title of Paper</i>.
-                Physics of Fluids.
-            </li>
+<!-- ABOUT -->
+<section id="about">
 
-            <li>
-                Mohanty, P. K., et al. (2022).
-                Conference Paper.
-                CHEMSMART.
-            </li>
-        </ul>
-    </section>
+<h2>About Me</h2>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-        <h2>Research Projects</h2>
+<div class="grid">
 
-        <div class="project-box">
-            <h3>Viscoelastic Orr–Sommerfeld Solver</h3>
-            <p>
-                MATLAB-based solver for eigenvalue problems in
-                viscoelastic channel flows.
-            </p>
-            <p>
-                <b>Tools:</b> MATLAB, Spectral Methods
-            </p>
-        </div>
+<div class="card">
+<p>
+I am a PhD student working on theoretical and computational
+fluid dynamics, with emphasis on complex and viscoelastic flows.
+</p>
+</div>
 
-        <div class="project-box">
-            <h3>DNS of Bluff Body Flows</h3>
-            <p>
-                OpenFOAM simulations of drag reduction
-                using surface topography.
-            </p>
-            <p>
-                <b>Tools:</b> OpenFOAM, ParaView
-            </p>
-        </div>
+<div class="card">
+<p>
+My research integrates stability theory, asymptotics,
+DNS, and mathematical modeling.
+</p>
+</div>
 
-        <div class="project-box">
-            <h3>Base State Solvers</h3>
-            <p>
-                Mathematica implementation of plane Poiseuille
-                and Dean flows.
-            </p>
-        </div>
+<div class="card">
+<p>
+I use MATLAB, Mathematica, OpenFOAM, Python,
+and high-performance computing.
+</p>
+</div>
 
-    </section>
+</div>
+</section>
 
-    <!-- CV -->
-    <section id="cv" class="section">
-        <h2>Curriculum Vitae</h2>
+<!-- RESEARCH -->
+<section id="research">
 
-        <p>
-            📄 Download my CV:
-            <a href="cv.pdf" target="_blank">Click here</a>
-        </p>
+<h2>Research Interests</h2>
 
-        <h3>Education</h3>
-        <ul>
-            <li>PhD in Chemical Engineering (2025– )</li>
-            <li>B.Tech + M.Tech, NIT Rourkela</li>
-        </ul>
+<div class="grid">
 
-        <h3>Skills</h3>
-        <ul>
-            <li>MATLAB, Mathematica, Python</li>
-            <li>OpenFOAM, CFD</li>
-            <li>LaTeX, Git</li>
-        </ul>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-
-        <p>
-            📧 Email: yourname@email.com
-        </p>
-
-        <p>
-            🔗 GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a>
-        </p>
-
-        <p>
-            🔗 Google Scholar: (Add link)
-        </p>
-
-        <p>
-            📍 University: Your University Name
-        </p>
-    </section>
+<div class="card">Viscoelastic Instabilities</div>
+<div class="card">Orr–Sommerfeld Systems</div>
+<div class="card">Nonlinear Stability</div>
+<div class="card">Wall-Bounded Flows</div>
+<div class="card">Microfluidics</div>
+<div class="card">Complex Fluids</div>
 
 </div>
 
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+
+<h2>Publications</h2>
+
+<div class="card pub">
+<b>Mohanty et al. (2023)</b><br>
+Physics of Fluids — Drag Reduction in Viscoelastic Flow
+</div>
+
+<div class="card pub">
+<b>Mohanty et al. (2022)</b><br>
+CHEMSMART — Bluff Body Flows
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Stability Solver</h3>
+<p>MATLAB spectral eigenvalue solver for viscoelastic flows.</p>
+</div>
+
+<div class="card">
+<h3>DNS Platform</h3>
+<p>OpenFOAM simulations of polymeric flows.</p>
+</div>
+
+<div class="card">
+<h3>Base State Models</h3>
+<p>Mathematica solvers for Poiseuille & Dean flows.</p>
+</div>
+
+<div class="card">
+<h3>Research Blog</h3>
+<p>Notes on asymptotics and instabilities.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="grid">
+
+<div class="card">
+📧 Email: your@email.com
+</div>
+
+<div class="card">
+🐙 GitHub: github.com/yourusername
+</div>
+
+<div class="card">
+📚 Google Scholar: link
+</div>
+
+<div class="card">
+🏛 University: Your Institute
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Pratyush Kumar Mohanty | Fluid Dynamics Research</p>
+
+<p>© 2026 Pratyush Kumar Mohanty | Fluid Dynamics</p>
+
 </footer>
 
 </body>
